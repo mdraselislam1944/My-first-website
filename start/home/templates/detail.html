@@ -1,0 +1,44 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<table border="2">
+<thead>
+<tr>
+    <th>
+      Emp_id
+    </th>
+    <th>
+        Emp_name
+      </th>
+      <th>
+        Emp_Department
+      </th>
+      <th>
+        Action
+      </th>
+      <th>
+        Action
+      </th>
+</tr>
+</thead>
+<tbody>
+{% for employees in employee %}
+<tr>
+  <td class="text-capitalize">{{employees.Emp_id}}</td>
+  <td>{{employees.Emp_name}}</td>
+<td>{{employees.dept}}</td>
+
+<td><a href="{% url 'delete' employees.id %}">delete</a></td>
+
+<td><a href="{% url 'update' id=employees.Emp_id %}">update</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<div>
+  <a href="http://127.0.0.1:8000/print/"> <h6>Add_new</h6></a>
+</div>
+</body>
+</html>
